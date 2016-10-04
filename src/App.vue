@@ -1,5 +1,4 @@
 <template>
-
   <div id="app">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
