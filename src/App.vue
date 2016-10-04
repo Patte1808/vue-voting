@@ -1,7 +1,31 @@
 <template>
+
   <div id="app">
-    <h1>Pollnator</h1>
-    <router-view class="view"></router-view>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Title</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <router-link to="/" class="mdl-navigation__link">Create poll</router-link>
+          <router-link to="/polls/1" class="mdl-navigation__link">Show first poll</router-link>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Title</span>
+      <nav class="mdl-navigation">
+        <router-link to="/" class="mdl-navigation__link">Create poll</router-link>
+        <router-link to="/polls/1" class="mdl-navigation__link">Show first poll</router-link>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+      <div class="page-content"><router-view class="view"></router-view></div>
+    </main>
+    </div>
   </div>
 </template>
 
@@ -12,32 +36,5 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
-}
 </style>

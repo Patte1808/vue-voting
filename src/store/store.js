@@ -6,7 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     polls: [],
-    newPoll: {title: '', answers: ['']}
+    newPoll: {title: '', answers: ['']},
+    currentPoll: {}
   },
   mutations: {
     ADD_POLL (state) {
@@ -28,6 +29,10 @@ export default new Vuex.Store({
     },
     UPDATE_POLL_TITLE (state, title) {
       state.newPoll.title = title
+    },
+    GET_POLL (state, id) {
+      console.log(state.polls[parseInt(id)])
+      state.currentPoll = state.polls[id]
     }
   },
   actions: {
@@ -42,10 +47,14 @@ export default new Vuex.Store({
     },
     updatePollTitle ({commit}, title) {
       commit('UPDATE_POLL_TITLE', title)
+    },
+    getPoll ({commit}, id) {
+      commit('GET_POLL', id)
     }
   },
   getters: {
     newPoll: state => state.newPoll,
-    polls: state => state.polls
+    polls: state => state.polls,
+    currentPoll: state => state.currentPoll
   }
 })

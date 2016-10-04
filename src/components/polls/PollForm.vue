@@ -1,20 +1,26 @@
 <template>
-  <form>
-    <div class="mdl-textfield mdl-js-textfield">
-      <input class="mdl-textfield__input" type="text" :value="title" @input="updatePollTitle">
-      <label class="mdl-textfield__label" for="sample1">Poll title</label>
-    </div>
+  <div class="mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col">
+      <form>
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" :value="title" @input="updatePollTitle">
+          <label class="mdl-textfield__label" for="sample1">Poll title</label>
+        </div>
 
-    <div v-for="(answer, index) in answers">
-      <div class="mdl-textfield mdl-js-textfield">
-        <input class="mdl-textfield__input" type="text" :id="index" :value="answer" @input="updatePollAnswer" v-on:keyup="addPollAnswer">
-        <label class="mdl-textfield__label" :for="index">Vote option</label>
-      </div>
+        <div v-for="(answer, index) in answers">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" :id="index" :value="answer" @input="updatePollAnswer" v-on:keyup="addPollAnswer">
+            <label class="mdl-textfield__label" :for="index">Vote option</label>
+          </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="savePoll">
+          Save poll
+        </button>
+      </form>
     </div>
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="savePoll">
-      Save poll
-    </button>
-  </form>
+    <div class="mdl-layout-spacer"></div>
+  </div>
 </template>
 
 <script>
