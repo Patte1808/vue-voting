@@ -10,6 +10,13 @@ export default new Vuex.Store({
   },
   mutations: {
     ADD_POLL (state) {
+      let tmpAnswers = state.newPoll.answers
+      for (let i = 0; i < tmpAnswers.length; i++) {
+        if (tmpAnswers[i] === '') {
+          tmpAnswers.splice(i, 1)
+        }
+      }
+      state.newPoll.answers = tmpAnswers
       state.polls.push(state.newPoll)
     },
     ADD_POLL_ANSWER (state) {

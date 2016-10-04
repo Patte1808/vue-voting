@@ -11,6 +11,9 @@
         <label class="mdl-textfield__label" :for="index">Vote option</label>
       </div>
     </div>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" @click="savePoll">
+      Save poll
+    </button>
   </form>
 </template>
 
@@ -28,6 +31,9 @@ export default {
     updatePollAnswer (e) {
       const {id, value} = e.target
       this.$store.dispatch('updatePollAnswer', {id, value})
+    },
+    savePoll () {
+      this.$store.dispatch('addPoll')
     }
   },
   computed: {

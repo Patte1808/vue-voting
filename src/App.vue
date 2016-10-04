@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <h1>Test</h1>
-    <ul>
-      <li><router-link to="/">/</router-link></li>
-    </ul>
+    <h1>Pollnator</h1>
     <router-view class="view"></router-view>
   </div>
 </template>
