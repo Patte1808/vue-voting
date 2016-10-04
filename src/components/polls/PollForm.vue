@@ -26,7 +26,7 @@ export default {
       }
     },
     updatePollAnswer (e) {
-      const {id, value, parentElement} = e.target
+      const {id, value} = e.target
       this.$store.dispatch('updatePollAnswer', {id, value})
     }
   },
