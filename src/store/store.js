@@ -16,8 +16,8 @@ export default new Vuex.Store({
       state.newPoll.answers.push('')
     },
     UPDATE_POLL_ANSWER (state, answer) {
-      const {id, title} = answer
-      state.newPoll.answers[id] = title
+      const {id, value} = answer
+      state.newPoll.answers[id] = value
     },
     UPDATE_POLL_TITLE (state, title) {
       state.newPoll.title = title
@@ -38,7 +38,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    newTodo: state => state.newPoll,
+    newPoll: state => state.newPoll,
     polls: state => state.polls
   }
 })
