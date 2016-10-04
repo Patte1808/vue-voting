@@ -23,7 +23,15 @@
       </nav>
     </div>
     <main class="mdl-layout__content">
-      <div class="page-content"><router-view class="view"></router-view></div>
+      <div class="page-content">
+        <div class="mdl-grid">
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-cell mdl-cell--4-col">
+            <router-view class="view"></router-view>
+          </div>
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </div>
     </main>
     </div>
   </div>
