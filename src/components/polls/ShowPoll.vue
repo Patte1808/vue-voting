@@ -1,7 +1,7 @@
 <template>
   <div class="demo-card-wide mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
-      <h2 class="mdl-card__title-text"></h2>
+      <h2 class="mdl-card__title-text">{{title}}</h2>
     </div>
     <div class="mdl-card__supporting-text">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -23,7 +23,7 @@
 <script>
 export default {
   created () {
-    this.$store.dispatch('getPoll', this.$store.state.route.params.id - 1)
+    this.$store.dispatch('getPoll', parseInt(this.$store.state.route.params.id - 1))
   },
   methods: {
   },

@@ -31,7 +31,8 @@ export default {
       const {id, value} = e.target
       this.$store.dispatch('updatePollAnswer', {id, value})
     },
-    savePoll () {
+    savePoll (e) {
+      e.preventDefault()
       this.$store.dispatch('addPoll')
     }
   },

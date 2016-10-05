@@ -31,6 +31,8 @@ export default new Vuex.Store({
       state.newPoll.title = title
     },
     GET_POLL (state, id) {
+      console.log(JSON.stringify(state))
+      console.log(`Setting poll to ${state.polls[parseInt(id)]} with id ${id}`)
       state.currentPoll = state.polls[parseInt(id)]
     }
   },
