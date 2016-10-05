@@ -4,18 +4,17 @@
       <h2 class="mdl-card__title-text">{{title}}</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Mauris sagittis pellentesque lacus eleifend lacinia...
+      <div v-for="(answer, index) in answers">
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" :for="index">
+          <input type="radio" class="mdl-radio__button" name="answers" :value="answer" :id="index">
+          <span class="mdl-radio__label">{{answer}}</span>
+        </label>
+      </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-        Get Started
+        Vote
       </a>
-    </div>
-    <div class="mdl-card__menu">
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">share</i>
-      </button>
     </div>
   </div>
 </template>
